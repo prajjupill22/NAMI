@@ -14,6 +14,12 @@ Nami does **not** train a model. It saves small local notes and uses them to sha
 
 ## Run locally
 
+## Capability boundary
+
+Nami can launch a web search when you type or say `search the web for ...`. This static version cannot read webpages for you, access your accounts, send messages, or perform unrestricted web actions. Those features require a secure hosted backend plus explicitly authorized integrations.
+
+For speech, Nami prefers a friendlier, feminine-sounding installed browser voice (for example Zira or Samantha) when one is available. The exact available voice is controlled by the device and browser.
+
 Open `index.html` in a modern browser. Voice input often requires HTTPS or localhost, so it works most reliably once deployed to GitHub Pages.
 
 ## Publish with GitHub Pages
