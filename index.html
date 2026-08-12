@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta name="theme-color" content="#171031" />
+  <title>Nami // Personal Operating System</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="scanlines" aria-hidden="true"></div>
+  <main class="desktop-shell">
+    <header class="topbar"><span class="orb"></span><strong>NAMI_OS v.2000.∞</strong><span class="top-time" id="clock"></span><span class="online">● LOCAL MODE</span></header>
+    <section class="hero">
+      <div><p class="eyebrow">PERSONAL ASSISTANT // OFFLINE-FRIENDLY</p><h1>Nami<span>_</span></h1><p class="tagline">Your tiny desktop intelligence, learning your preferences one conversation at a time.</p></div>
+      <div class="system-card"><div class="card-title">SYSTEM STATUS <span>×</span></div><p><b class="dot green"></b> Chat interface <em>ready</em></p><p><b class="dot" id="micDot"></b> Voice input <em id="voiceStatus">checking…</em></p><p><b class="dot green"></b> Local memory <em id="memoryCount">0 entries</em></p></div>
+    </section>
+    <section class="workspace">
+      <section class="window chat-window" aria-label="Nami conversation">
+        <div class="titlebar"><span class="window-icon">✦</span> Nami Console.exe <div class="window-buttons"><i>_</i><i>□</i><i>×</i></div></div>
+        <div class="chat-toolbar"><span>CHANNEL: <b>DIRECT</b></span><label class="tts-toggle"><input id="ttsToggle" type="checkbox" checked> SPEAK REPLIES</label><button id="clearChat" class="tiny-btn">CLEAR CHAT</button></div>
+        <div id="chat" class="chat" aria-live="polite"></div>
+        <form id="chatForm" class="composer"><button id="micButton" type="button" class="mic" title="Start voice input" aria-label="Start voice input">◉</button><input id="messageInput" autocomplete="off" placeholder="Type a message to Nami…" maxlength="500" /><button class="send" type="submit">SEND ↵</button></form>
+        <p id="speechNotice" class="notice" hidden></p>
+      </section>
+      <aside class="side-stack">
+        <section class="window learn-window"><div class="titlebar">Nami Learning Cache.dat <div class="window-buttons"><i>_</i><i>×</i></div></div><div class="learn-content"><p class="pixel-heading">WHAT NAMI REMEMBERS</p><div id="memoryList" class="memory-list"></div><p class="hint">Correct a reply using the button beneath it. Nami saves only local preferences and corrections in this browser—no model training, no server.</p><div class="memory-actions"><button id="exportMemory">EXPORT</button><button id="resetMemory" class="danger">RESET MEMORY</button></div></div></section>
+        <section class="window shortcuts"><div class="titlebar">Quick Commands <div class="window-buttons"><i>×</i></div></div><div><button data-prompt="What do you remember about me?">/memory</button><button data-prompt="Help me organize my day">/plan</button><button data-prompt="Tell me a fun fact">/fact</button></div></section>
+      </aside>
+    </section>
+    <footer><span>© 2000–2026 NAMI PERSONAL OS</span><span>YOUR DATA STAYS IN THIS BROWSER</span></footer>
+  </main>
+  <template id="messageTemplate"><article class="message"><div class="avatar"></div><div class="bubble"><div class="meta"></div><p class="message-text"></p><div class="message-actions"></div></div></article></template>
+  <script src="app.js"></script>
+</body>
+</html>
